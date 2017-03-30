@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F63C05D1E8BB96100E4E39B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F63C05C1E8BB96100E4E39B /* SignUpViewController.swift */; };
+		9F63C05F1E8BDBC100E4E39B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F63C05E1E8BDBC100E4E39B /* LoginViewController.swift */; };
+		9F63C0611E8BFD9400E4E39B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F63C0601E8BFD9400E4E39B /* ProfileViewController.swift */; };
+		9F6B14E51E8D45D800D4D431 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B14E41E8D45D800D4D431 /* EditProfileViewController.swift */; };
 		9F8D373C1E82A7DD003E36CB /* Skatepark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D373B1E82A7DD003E36CB /* Skatepark.swift */; };
 		9FBCA91B1E7C470700ADE283 /* SideBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBCA91A1E7C470700ADE283 /* SideBarTableViewController.swift */; };
 		9FBCA91D1E7C4B6700ADE283 /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBCA91C1E7C4B6700ADE283 /* SideBar.swift */; };
@@ -22,6 +26,10 @@
 
 /* Begin PBXFileReference section */
 		483438A8696DFED5EDC6AD7C /* Pods_Skate_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Skate_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F63C05C1E8BB96100E4E39B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		9F63C05E1E8BDBC100E4E39B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9F63C0601E8BFD9400E4E39B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9F6B14E41E8D45D800D4D431 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		9F8D373B1E82A7DD003E36CB /* Skatepark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skatepark.swift; sourceTree = "<group>"; };
 		9FBCA91A1E7C470700ADE283 /* SideBarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarTableViewController.swift; sourceTree = "<group>"; };
 		9FBCA91C1E7C4B6700ADE283 /* SideBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
@@ -69,6 +77,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9F63C05B1E8BB8A500E4E39B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9FE94C171E796B75009B7B3F /* AppDelegate.swift */,
+				9F63C05C1E8BB96100E4E39B /* SignUpViewController.swift */,
+				9F63C05E1E8BDBC100E4E39B /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		9F63C0621E8BFD9700E4E39B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				9F63C0601E8BFD9400E4E39B /* ProfileViewController.swift */,
+				9F6B14E41E8D45D800D4D431 /* EditProfileViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		9F8D37391E8295DD003E36CB /* Side Bar Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,9 +135,10 @@
 		9FE94C161E796B75009B7B3F /* Skate Demo */ = {
 			isa = PBXGroup;
 			children = (
-				9FE94C171E796B75009B7B3F /* AppDelegate.swift */,
+				9F63C05B1E8BB8A500E4E39B /* Login */,
 				9F8D373A1E829BCE003E36CB /* Map */,
 				9F8D37391E8295DD003E36CB /* Side Bar Menu */,
+				9F63C0621E8BFD9700E4E39B /* Profile */,
 				9FE94C1B1E796B75009B7B3F /* Main.storyboard */,
 				9FE94C1E1E796B75009B7B3F /* Assets.xcassets */,
 				9FE94C201E796B75009B7B3F /* LaunchScreen.storyboard */,
@@ -250,11 +278,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F63C05F1E8BDBC100E4E39B /* LoginViewController.swift in Sources */,
+				9F63C05D1E8BB96100E4E39B /* SignUpViewController.swift in Sources */,
 				9FE94C1A1E796B75009B7B3F /* ViewController.swift in Sources */,
 				9FBCA91B1E7C470700ADE283 /* SideBarTableViewController.swift in Sources */,
 				9FBCA91D1E7C4B6700ADE283 /* SideBar.swift in Sources */,
 				9FE94C181E796B75009B7B3F /* AppDelegate.swift in Sources */,
+				9F63C0611E8BFD9400E4E39B /* ProfileViewController.swift in Sources */,
 				9F8D373C1E82A7DD003E36CB /* Skatepark.swift in Sources */,
+				9F6B14E51E8D45D800D4D431 /* EditProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
