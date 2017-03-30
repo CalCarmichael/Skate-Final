@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var usernameText: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var displayNameText: UILabel!
+    @IBOutlet weak var bioText: UITextView!
     
     var databaseRef: FIRDatabaseReference!
     
@@ -33,6 +34,14 @@ class ProfileViewController: UIViewController {
                 //Username and default username
                 
                 let username = dictionary?["username"] as? String ?? "username"
+                
+                //Display name
+                
+                let display = dictionary?["display"] as? String ?? "display"
+                
+                //Bio
+                
+                let bio = dictionary?["bio"] as? String ?? "bio"
                 
                 //Profile Image
                 
@@ -55,7 +64,8 @@ class ProfileViewController: UIViewController {
                 }
                 
                 self.usernameText.text = username
-                self.displayNameText.text = username
+                self.displayNameText.text = display
+                self.bioText.text = bio
             
             }) { (error) in
                 

@@ -11,6 +11,7 @@
 		9F63C05F1E8BDBC100E4E39B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F63C05E1E8BDBC100E4E39B /* LoginViewController.swift */; };
 		9F63C0611E8BFD9400E4E39B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F63C0601E8BFD9400E4E39B /* ProfileViewController.swift */; };
 		9F6B14E51E8D45D800D4D431 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B14E41E8D45D800D4D431 /* EditProfileViewController.swift */; };
+		9F6B14E71E8D73AF00D4D431 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B14E61E8D73AF00D4D431 /* CameraViewController.swift */; };
 		9F8D373C1E82A7DD003E36CB /* Skatepark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D373B1E82A7DD003E36CB /* Skatepark.swift */; };
 		9FBCA91B1E7C470700ADE283 /* SideBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBCA91A1E7C470700ADE283 /* SideBarTableViewController.swift */; };
 		9FBCA91D1E7C4B6700ADE283 /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBCA91C1E7C4B6700ADE283 /* SideBar.swift */; };
@@ -30,6 +31,7 @@
 		9F63C05E1E8BDBC100E4E39B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9F63C0601E8BFD9400E4E39B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9F6B14E41E8D45D800D4D431 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		9F6B14E61E8D73AF00D4D431 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		9F8D373B1E82A7DD003E36CB /* Skatepark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skatepark.swift; sourceTree = "<group>"; };
 		9FBCA91A1E7C470700ADE283 /* SideBarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarTableViewController.swift; sourceTree = "<group>"; };
 		9FBCA91C1E7C4B6700ADE283 /* SideBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			children = (
 				9F63C0601E8BFD9400E4E39B /* ProfileViewController.swift */,
 				9F6B14E41E8D45D800D4D431 /* EditProfileViewController.swift */,
+				9F6B14E61E8D73AF00D4D431 /* CameraViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F63C05F1E8BDBC100E4E39B /* LoginViewController.swift in Sources */,
+				9F6B14E71E8D73AF00D4D431 /* CameraViewController.swift in Sources */,
 				9F63C05D1E8BB96100E4E39B /* SignUpViewController.swift in Sources */,
 				9FE94C1A1E796B75009B7B3F /* ViewController.swift in Sources */,
 				9FBCA91B1E7C470700ADE283 /* SideBarTableViewController.swift in Sources */,
