@@ -123,5 +123,12 @@ class ViewController: UIViewController, SideBarDelegate, MGLMapViewDelegate {
 
     }
 
+    //Image for Annotation - Change for Skatepark/StreetSkating
+    
+     func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
+        
+        return nil
+        
+    }
 
 }
