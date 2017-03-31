@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9F0C06881E8E823E00972047 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0C06871E8E823E00972047 /* User.swift */; };
+		9F0C068A1E8E99E900972047 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0C06891E8E99E900972047 /* FeedViewController.swift */; };
 		9F63C05D1E8BB96100E4E39B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F63C05C1E8BB96100E4E39B /* SignUpViewController.swift */; };
 		9F63C05F1E8BDBC100E4E39B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F63C05E1E8BDBC100E4E39B /* LoginViewController.swift */; };
 		9F63C0611E8BFD9400E4E39B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F63C0601E8BFD9400E4E39B /* ProfileViewController.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		483438A8696DFED5EDC6AD7C /* Pods_Skate_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Skate_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F0C06871E8E823E00972047 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9F0C06891E8E99E900972047 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		9F63C05C1E8BB96100E4E39B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9F63C05E1E8BDBC100E4E39B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9F63C0601E8BFD9400E4E39B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		9F63C0621E8BFD9700E4E39B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				9F0C06891E8E99E900972047 /* FeedViewController.swift */,
 				9F63C0601E8BFD9400E4E39B /* ProfileViewController.swift */,
 				9F6B14E41E8D45D800D4D431 /* EditProfileViewController.swift */,
 				9F6B14E61E8D73AF00D4D431 /* CameraViewController.swift */,
@@ -294,6 +297,7 @@
 				9F63C0611E8BFD9400E4E39B /* ProfileViewController.swift in Sources */,
 				9F8D373C1E82A7DD003E36CB /* Skatepark.swift in Sources */,
 				9F6B14E51E8D45D800D4D431 /* EditProfileViewController.swift in Sources */,
+				9F0C068A1E8E99E900972047 /* FeedViewController.swift in Sources */,
 				9F0C06881E8E823E00972047 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
