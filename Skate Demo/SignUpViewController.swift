@@ -58,11 +58,9 @@ class SignUpViewController: UIViewController {
         let email = user.email
         let userName = email?.components(separatedBy: delimiter)
         
-        let newUser = ["username" : userName?[0],
-                        "email" : user.email,
-                       "photo" : "https://firebasestorage.googleapis.com/v0/b/skate-286c4.appspot.com/o/empty_profile_picture.jpg?alt=media&token=f09bfd51-a2b7-47b4-8e1f-fea23f791da0"]
+        let newUser = User(bio: "", display: (userName?[0])!, email: email!, photo: "https://firebasestorage.googleapis.com/v0/b/skate-286c4.appspot.com/o/empty_profile_picture.jpg?alt=media&token=f09bfd51-a2b7-47b4-8e1f-fea23f791da0", username: (userName?[0])!)
         
-        self.databaseRef.child("Profile").child(user.uid).updateChildValues(newUser) { (error, ref) in
+        self.databaseRef.child("Profile").child(user.uid).updateChildValues(newUser.getUserAsDictionary()) { (error, ref) in
             if error != nil {
                 print (error!)
                 return

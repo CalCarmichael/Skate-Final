@@ -452,21 +452,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBm-vm-B4l">
-                                        <rect key="frame" x="8" y="21" width="46" height="30"/>
+                                        <rect key="frame" x="8" y="21" width="68" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="46" id="diU-ao-Mxh"/>
+                                            <constraint firstAttribute="width" constant="68" id="dyB-O9-SEL"/>
                                         </constraints>
-                                        <state key="normal" title="No"/>
+                                        <state key="normal" title="Cancel"/>
                                         <connections>
                                             <action selector="cancelUpdate:" destination="j5L-Uo-jBp" eventType="touchUpInside" id="Pkj-V3-Il3"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1I-ar-Vu6">
-                                        <rect key="frame" x="62" y="26" width="83" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Nb-Py-VyW">
                                         <rect key="frame" x="303" y="21" width="64" height="30"/>
                                         <constraints>
@@ -475,21 +469,24 @@
                                         <state key="normal" title="Confirm"/>
                                         <connections>
                                             <action selector="saveProfileData:" destination="j5L-Uo-jBp" eventType="touchUpInside" id="L8T-BJ-hda"/>
+                                            <segue destination="vDL-B4-lyO" kind="show" id="CMQ-zp-vSF"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1I-ar-Vu6">
+                                        <rect key="frame" x="84" y="26" width="83" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="P1I-ar-Vu6" firstAttribute="leading" secondItem="PBm-vm-B4l" secondAttribute="trailing" constant="8" id="Tj8-uD-GFW"/>
-                                    <constraint firstItem="PBm-vm-B4l" firstAttribute="centerY" secondItem="P1I-ar-Vu6" secondAttribute="centerY" id="XRp-Yt-KmY"/>
-                                    <constraint firstItem="PBm-vm-B4l" firstAttribute="centerY" secondItem="ruE-fn-Wqi" secondAttribute="centerY" id="aRs-Pq-c5i"/>
-                                    <constraint firstItem="P1I-ar-Vu6" firstAttribute="top" secondItem="ruE-fn-Wqi" secondAttribute="top" constant="26" id="exX-0m-LbC"/>
-                                    <constraint firstAttribute="bottom" secondItem="P1I-ar-Vu6" secondAttribute="bottom" constant="25" id="hVs-eP-h2h"/>
+                                    <constraint firstItem="P1I-ar-Vu6" firstAttribute="centerY" secondItem="PBm-vm-B4l" secondAttribute="centerY" id="3h9-n9-nU5"/>
+                                    <constraint firstItem="PBm-vm-B4l" firstAttribute="leading" secondItem="ruE-fn-Wqi" secondAttribute="leadingMargin" id="fz4-Rk-v7J"/>
                                     <constraint firstItem="6Nb-Py-VyW" firstAttribute="trailing" secondItem="ruE-fn-Wqi" secondAttribute="trailingMargin" id="nQ9-Uk-YqR"/>
-                                    <constraint firstItem="PBm-vm-B4l" firstAttribute="leading" secondItem="ruE-fn-Wqi" secondAttribute="leadingMargin" id="pDa-fi-YtM"/>
-                                    <constraint firstItem="PBm-vm-B4l" firstAttribute="baseline" secondItem="6Nb-Py-VyW" secondAttribute="baseline" id="q7H-lw-jFu"/>
-                                    <constraint firstItem="P1I-ar-Vu6" firstAttribute="leading" secondItem="PBm-vm-B4l" secondAttribute="trailing" constant="8" symbolic="YES" id="qgY-uG-hgS"/>
-                                    <constraint firstItem="6Nb-Py-VyW" firstAttribute="leading" secondItem="P1I-ar-Vu6" secondAttribute="trailing" constant="158" id="tb9-wx-jge"/>
+                                    <constraint firstItem="P1I-ar-Vu6" firstAttribute="leading" secondItem="PBm-vm-B4l" secondAttribute="trailing" constant="8" symbolic="YES" id="pgE-hD-z7p"/>
+                                    <constraint firstItem="PBm-vm-B4l" firstAttribute="baseline" secondItem="6Nb-Py-VyW" secondAttribute="baseline" id="szF-Ps-4on"/>
+                                    <constraint firstItem="P1I-ar-Vu6" firstAttribute="centerY" secondItem="ruE-fn-Wqi" secondAttribute="centerY" id="v0e-K5-FrU"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7G-KQ-Scq">
@@ -578,7 +575,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZbA-iF-B3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2503" y="546"/>
+            <point key="canvasLocation" x="2538" y="546"/>
         </scene>
         <!--ViewController-->
         <scene sceneID="3AE-ne-ihy">
@@ -632,7 +629,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HaX-Rc-EOX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1761" y="-149"/>
+            <point key="canvasLocation" x="1761" y="-202"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="vGd-34-70z">
@@ -655,5 +652,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="PTO-zW-17u"/>
+        <segue reference="CMQ-zp-vSF"/>
     </inferredMetricsTieBreakers>
 </document>
