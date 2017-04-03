@@ -141,7 +141,7 @@
                                         <real key="value" value="-1.904755"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="zoomLevel">
-                                        <real key="value" value="9"/>
+                                        <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="showsUserLocation" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -340,6 +340,6 @@
         <image name="placeholderImage" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kjy-TZ-nSB"/>
+        <segue reference="8BL-uo-nWa"/>
     </inferredMetricsTieBreakers>
 </document>

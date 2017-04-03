@@ -39,6 +39,6 @@
 	<key>MGLMapboxAccessToken</key>
 	<string>pk.eyJ1IjoiY2FsbHVtY2FybWljaGFlbCIsImEiOiJjajBwZGY5NTYwMDBqMnFxcXU0Z213bXVtIn0.1wsZPZy2CH8_2Drt-D4tVg</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Upload Picture</string>
+	<string>Please upload your user photo!</string>
 </dict>
 </plist>

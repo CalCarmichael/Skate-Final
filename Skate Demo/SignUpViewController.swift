@@ -15,7 +15,10 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
     @IBOutlet weak var profileImage: UIImageView!
+    
+    var selectedImage: UIImage?
     
     
     override func viewDidLoad() {
@@ -56,14 +59,31 @@ class SignUpViewController: UIViewController {
         profileImage.layer.cornerRadius = 50
         profileImage.clipsToBounds = true
         
+        //Tap gesture for user profile image
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleSelectProfileImage))
+        profileImage.addGestureRecognizer(tapGesture)
+        profileImage.isUserInteractionEnabled = true
+        
+    }
+    
+    //User profile image picker
+    
+    func handleSelectProfileImage() {
+     
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        present(pickerController, animated: true, completion: nil)
+        
     }
     
     @IBAction func dismissOnClick(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)
         
-        
     }
+    
+    //Signing up the users and sending information to database
 
     @IBAction func signUpButton_TouchUpInside(_ sender: Any) {
     
@@ -74,20 +94,48 @@ class SignUpViewController: UIViewController {
                 return
             }
             
-            let ref = FIRDatabase.database().reference()
-            let userReference = ref.child("users")
             let uid = user?.uid
-            let newUserReference = userReference.child(uid!)
-            newUserReference.setValue(["username": self.usernameTextField.text!, "email": self.emailTextField.text!])
-            print("description: \(newUserReference.description())")
-            
-            
+            let storageRef = FIRStorage.storage().reference(forURL: "gs://skate-286c4.appspot.com").child("profile_image").child(uid!)
+            if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
+                storageRef.put(imageData, metadata: nil, completion: { (metadata, error) in
+                    
+                    if error != nil {
+                        return
+                        
+                    }
+                    
+                    let profileImageUrl = metadata?.downloadURL()?.absoluteString
+                    let ref = FIRDatabase.database().reference()
+                    let userReference = ref.child("users")
+                    let newUserReference = userReference.child(uid!)
+                    newUserReference.setValue(["username": self.usernameTextField.text!, "email": self.emailTextField.text!, "profileImageUrl": profileImageUrl])
+                    
+                    
+                })
+            }
             
         })
     
     
     }
     
-  
+}
 
+//Extension for showing user image in view
+    
+extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+       
+        print("did finish pick")
+        
+        if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+            selectedImage = image
+            profileImage.image = image
+        }
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
 }
