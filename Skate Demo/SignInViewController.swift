@@ -1,5 +1,5 @@
 //
-//  SignUpViewController.swift
+//  SignInViewController.swift
 //  Skate Demo
 //
 //  Created by Callum Carmichael (i7726422) on 03/04/2017.
@@ -8,25 +8,17 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-    }
-    
-    @IBAction func dismissOnClick(_ sender: Any) {
-        
-        dismiss(animated: true, completion: nil)
-        
-        
+       
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
+       
     }
-    
 
 }

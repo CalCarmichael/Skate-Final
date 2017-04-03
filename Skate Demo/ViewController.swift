@@ -9,7 +9,8 @@
 import UIKit
 import Firebase
 import Mapbox
-import MapKit
+
+
 
 class ViewController: UIViewController, SideBarDelegate, MGLMapViewDelegate {
     
@@ -36,6 +37,12 @@ class ViewController: UIViewController, SideBarDelegate, MGLMapViewDelegate {
                 addAnnotation(park: park)
             }
             
+            //Change this to feature the users own personal spots they saved to firebase
+            
+            if index == 3 {
+                addAnnotation(park: park)
+            }
+            
             
         }
         
@@ -55,10 +62,9 @@ class ViewController: UIViewController, SideBarDelegate, MGLMapViewDelegate {
         
         mapView.delegate = self
         
-        
         //Sidebar
         
-        sideBar = SideBar(sourceView: self.view, skateItems: ["All Skate Spots", "Skateparks", "Street Skating"])
+        sideBar = SideBar(sourceView: self.view, skateItems: ["All Skate Spots", "Skateparks", "Street Skating", "My Spots"])
         sideBar.delegate = self
         
         
@@ -104,6 +110,7 @@ class ViewController: UIViewController, SideBarDelegate, MGLMapViewDelegate {
         
     }
     
+    
 
     //Show the annotation callout
 
@@ -122,11 +129,17 @@ class ViewController: UIViewController, SideBarDelegate, MGLMapViewDelegate {
         mapView.deselectAnnotation(annotation, animated: false)
 
     }
+    
+    //Information button - turn this into 360 image
+    
+    func mapView(_ mapView: MGLMapView, leftCalloutAccessoryViewFor annotation: MGLAnnotation) -> UIView? {
+        return UIButton(type: .detailDisclosure)
+    }
 
-    //Image for Annotation - Change for Skatepark/StreetSkating
+    //Image for Annotation - Change this for Skatepark/StreetSkating
     
      func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
-        
+      
         return nil
         
     }

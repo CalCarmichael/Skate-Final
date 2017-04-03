@@ -9,54 +9,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Skate Demo/SignUpViewController.swift"
-            timestampString = "512487646.938822"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "signUp(email:password:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Skate_Demo.SignUpViewController.signUp () -&gt; ()"
-                  moduleName = "Skate Demo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/i7726422/Desktop/Skate/Skate%20Demo/SignUpViewController.swift"
-                  timestampString = "512485036.552368"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "15">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Skate_Demo.SignUpViewController.(signUp () -&gt; ()).(closure #1)"
-                  moduleName = "Skate Demo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/i7726422/Desktop/Skate/Skate%20Demo/SignUpViewController.swift"
-                  timestampString = "512485036.553432"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "23">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Skate Demo/EditProfileViewController.swift"
             timestampString = "512583719.062146"
             startingColumnNumber = "9223372036854775807"
