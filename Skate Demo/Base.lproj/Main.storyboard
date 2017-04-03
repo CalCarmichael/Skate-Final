@@ -91,7 +91,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="Zd3-cj-EA6" id="F8r-Ba-9OV"/>
-                        <outlet property="passwordTextField" destination="UvL-nS-618" id="Ahp-I9-bhH"/>
+                        <outlet property="passwordTextField" destination="UvL-nS-618" id="f4g-aL-cWE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gl8-DY-mKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -253,6 +253,7 @@
                                             <color key="titleColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="signUpButton_TouchUpInside:" destination="nOm-R0-azN" eventType="touchUpInside" id="qHN-V3-heI"/>
                                             <segue destination="Pkj-cG-poh" kind="presentation" id="8BL-uo-nWa"/>
                                         </connections>
                                     </button>
@@ -282,7 +283,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="7eq-Lx-NBL" id="Bak-L9-l2z"/>
                         <outlet property="passwordTextField" destination="16D-Br-dWk" id="fNe-hH-5nz"/>
-                        <outlet property="profileImage" destination="etg-Yp-YNU" id="Sjy-If-xjv"/>
+                        <outlet property="profileImage" destination="etg-Yp-YNU" id="8QM-2K-iIv"/>
                         <outlet property="usernameTextField" destination="Ed4-bH-4ZG" id="VLD-Cq-bHU"/>
                     </connections>
                 </viewController>
@@ -339,6 +340,6 @@
         <image name="placeholderImage" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8BL-uo-nWa"/>
+        <segue reference="kjy-TZ-nSB"/>
     </inferredMetricsTieBreakers>
 </document>

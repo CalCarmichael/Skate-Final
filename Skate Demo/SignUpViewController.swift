@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
 
@@ -64,10 +65,29 @@ class SignUpViewController: UIViewController {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
+    @IBAction func signUpButton_TouchUpInside(_ sender: Any) {
+    
+        FIRAuth.auth()?.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user: FIRUser?, error) in
+            
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            
+            let ref = FIRDatabase.database().reference()
+            let userReference = ref.child("users")
+            let uid = user?.uid
+            let newUserReference = userReference.child(uid!)
+            newUserReference.setValue(["username": self.usernameTextField.text!, "email": self.emailTextField.text!])
+            print("description: \(newUserReference.description())")
+            
+            
+            
+        })
+    
+    
     }
     
+  
 
 }
