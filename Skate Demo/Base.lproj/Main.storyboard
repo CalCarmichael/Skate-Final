@@ -210,9 +210,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3l-om-mYN">
-                                <rect key="frame" x="16" y="603" width="343" height="44"/>
+                                <rect key="frame" x="16" y="629" width="343" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="L4p-KH-anD"/>
+                                    <constraint firstAttribute="height" constant="30" id="L4p-KH-anD"/>
                                 </constraints>
                                 <state key="normal" title="Already have an account?">
                                     <color key="titleColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
@@ -281,10 +281,14 @@
                             <constraint firstItem="etg-Yp-YNU" firstAttribute="top" secondItem="fUN-NN-kkm" secondAttribute="bottom" constant="48" id="D2a-yO-S4S"/>
                             <constraint firstItem="aIP-18-hbC" firstAttribute="centerY" secondItem="y6y-EG-TYr" secondAttribute="centerY" id="F3V-rY-xaE"/>
                             <constraint firstItem="l3l-om-mYN" firstAttribute="leading" secondItem="y6y-EG-TYr" secondAttribute="leadingMargin" id="NVm-RV-gq4"/>
+                            <constraint firstItem="EhD-RO-7hJ" firstAttribute="top" secondItem="l3l-om-mYN" secondAttribute="bottom" constant="8" id="RNP-2a-1JJ"/>
+                            <constraint firstItem="l3l-om-mYN" firstAttribute="trailing" secondItem="y6y-EG-TYr" secondAttribute="trailingMargin" id="bUC-gV-zub"/>
                             <constraint firstItem="etg-Yp-YNU" firstAttribute="centerX" secondItem="y6y-EG-TYr" secondAttribute="centerX" id="grP-vh-ErF"/>
+                            <constraint firstItem="l3l-om-mYN" firstAttribute="leading" secondItem="y6y-EG-TYr" secondAttribute="leadingMargin" id="gtQ-Z5-9e6"/>
+                            <constraint firstItem="l3l-om-mYN" firstAttribute="centerX" secondItem="y6y-EG-TYr" secondAttribute="centerX" id="gtc-rl-bSQ"/>
                             <constraint firstItem="aIP-18-hbC" firstAttribute="centerX" secondItem="y6y-EG-TYr" secondAttribute="centerX" id="jj1-LS-TkW"/>
                             <constraint firstItem="l3l-om-mYN" firstAttribute="trailing" secondItem="y6y-EG-TYr" secondAttribute="trailingMargin" id="oQm-qg-dtO"/>
-                            <constraint firstItem="EhD-RO-7hJ" firstAttribute="top" secondItem="l3l-om-mYN" secondAttribute="bottom" constant="20" id="zbi-I3-yEZ"/>
+                            <constraint firstItem="EhD-RO-7hJ" firstAttribute="top" secondItem="l3l-om-mYN" secondAttribute="bottom" constant="8" id="zbi-I3-yEZ"/>
                         </constraints>
                     </view>
                     <connections>

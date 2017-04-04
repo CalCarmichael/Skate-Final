@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import ProgressHUD
 
 class SignInViewController: UIViewController {
     
@@ -47,6 +48,12 @@ class SignInViewController: UIViewController {
         
         handleTextField()
         
+    }
+    
+    //Dismiss the keyboard when user touches other screen space
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
     //Log user back in if they had previously signed in on same device without logging out
@@ -90,14 +97,17 @@ class SignInViewController: UIViewController {
     
     @IBAction func signInButton_TouchUpInside(_ sender: Any) {
         
+        view.endEditing(true)
+        ProgressHUD.show("Waiting...", interaction: false)
         AuthService.signIn(email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
+            ProgressHUD.showSuccess("Success")
             
             //Sending to main tabbar page when successful sign in
             self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
             
         }, onError: { error in
-            
-            print(error!)
+            ProgressHUD.showError(error!)
+           
             
         })
         
