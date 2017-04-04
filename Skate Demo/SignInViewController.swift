@@ -73,8 +73,8 @@ class SignInViewController: UIViewController {
     
     func handleTextField() {
         
-        emailTextField.addTarget(self, action: #selector(SignInViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
-        passwordTextField.addTarget(self, action: #selector(SignInViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        emailTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControlEvents.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControlEvents.editingChanged)
         
     }
     
@@ -98,7 +98,7 @@ class SignInViewController: UIViewController {
     @IBAction func signInButton_TouchUpInside(_ sender: Any) {
         
         view.endEditing(true)
-        ProgressHUD.show("Waiting...", interaction: false)
+       
         AuthService.signIn(email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
             ProgressHUD.showSuccess("Success")
             
