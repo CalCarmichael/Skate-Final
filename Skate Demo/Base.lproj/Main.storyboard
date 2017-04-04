@@ -52,7 +52,7 @@
                                             <color key="titleColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Pkj-cG-poh" kind="presentation" id="kjy-TZ-nSB"/>
+                                            <action selector="signInButton_TouchUpInside:" destination="uK5-T7-6m1" eventType="touchUpInside" id="e7a-Tp-IHJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -92,6 +92,8 @@
                     <connections>
                         <outlet property="emailTextField" destination="Zd3-cj-EA6" id="F8r-Ba-9OV"/>
                         <outlet property="passwordTextField" destination="UvL-nS-618" id="f4g-aL-cWE"/>
+                        <outlet property="signInButton" destination="uRZ-sb-DPj" id="U3r-xv-zDA"/>
+                        <segue destination="Pkj-cG-poh" kind="presentation" identifier="signInToTabbarVC" id="EXs-0K-k08"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gl8-DY-mKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -254,7 +256,6 @@
                                         </state>
                                         <connections>
                                             <action selector="signUpButton_TouchUpInside:" destination="nOm-R0-azN" eventType="touchUpInside" id="qHN-V3-heI"/>
-                                            <segue destination="Pkj-cG-poh" kind="presentation" id="8BL-uo-nWa"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -284,7 +285,9 @@
                         <outlet property="emailTextField" destination="7eq-Lx-NBL" id="Bak-L9-l2z"/>
                         <outlet property="passwordTextField" destination="16D-Br-dWk" id="fNe-hH-5nz"/>
                         <outlet property="profileImage" destination="etg-Yp-YNU" id="8QM-2K-iIv"/>
+                        <outlet property="signUpButton" destination="scc-cK-uyj" id="STI-XU-XFu"/>
                         <outlet property="usernameTextField" destination="Ed4-bH-4ZG" id="VLD-Cq-bHU"/>
+                        <segue destination="Pkj-cG-poh" kind="presentation" identifier="signUpToTabbarVC" id="81q-W9-GO8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgG-FS-YRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -340,6 +343,6 @@
         <image name="placeholderImage" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8BL-uo-nWa"/>
+        <segue reference="81q-W9-GO8"/>
     </inferredMetricsTieBreakers>
 </document>

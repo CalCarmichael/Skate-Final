@@ -17,6 +17,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var signUpButton: UIButton!
     
     var selectedImage: UIImage?
     
@@ -65,6 +66,32 @@ class SignUpViewController: UIViewController {
         profileImage.addGestureRecognizer(tapGesture)
         profileImage.isUserInteractionEnabled = true
         
+        //Validating  user authentication
+        
+        handleTextField()
+            
+        }
+        
+        func handleTextField() {
+            
+            usernameTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+            emailTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+            passwordTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        }
+        
+        func textFieldDidChange() {
+            guard let username = usernameTextField.text, !username.isEmpty, let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty
+            else {
+                
+                signUpButton.isEnabled = false
+                return
+            }
+            
+            //When all three fields are filled in the sign up button white color is enabled
+            
+            signUpButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+            signUpButton.isEnabled = true
+        
     }
     
     //User profile image picker
@@ -105,21 +132,29 @@ class SignUpViewController: UIViewController {
                     }
                     
                     let profileImageUrl = metadata?.downloadURL()?.absoluteString
-                    let ref = FIRDatabase.database().reference()
-                    let userReference = ref.child("users")
-                    let newUserReference = userReference.child(uid!)
-                    newUserReference.setValue(["username": self.usernameTextField.text!, "email": self.emailTextField.text!, "profileImageUrl": profileImageUrl])
                     
+                    self.setUserInformation(profileImageUrl: profileImageUrl!, username: self.usernameTextField.text!, email: self.emailTextField.text!, uid: uid!)
                     
                 })
             }
             
         })
+        
+        }
     
-    
+        func setUserInformation(profileImageUrl: String, username: String, email: String, uid: String) {
+            let ref = FIRDatabase.database().reference()
+            let userReference = ref.child("users")
+            let newUserReference = userReference.child(uid)
+            newUserReference.setValue(["username": username, "email": email, "profileImageUrl": profileImageUrl])
+            self.performSegue(withIdentifier: "signUpToTabbarVC", sender: nil)
+
+            
     }
-    
+        
 }
+    
+
 
 //Extension for showing user image in view
     
