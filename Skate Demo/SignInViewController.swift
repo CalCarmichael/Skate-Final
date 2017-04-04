@@ -46,6 +46,19 @@ class SignInViewController: UIViewController {
     
     }
     
+     //Log user back in if they had previously signed in on same device without logging out
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if FIRAuth.auth()?.currentUser != nil {
+
+        self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
+        
+        }
+        
+    }
+    
     //When the text field changes and all are filled in the sign in button becomes white
 
     func handleTextField() {

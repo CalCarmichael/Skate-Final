@@ -13,7 +13,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="rRj-fh-9ZU">
             <objects>
-                <viewController id="uK5-T7-6m1" customClass="SignInViewController" customModule="Skate_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" id="uK5-T7-6m1" customClass="SignInViewController" customModule="Skate_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zy9-Vr-X9I"/>
                         <viewControllerLayoutGuide type="bottom" id="kxa-BO-uf7"/>
@@ -103,7 +103,7 @@
         <!--Profile-->
         <scene sceneID="jGz-3m-xEb">
             <objects>
-                <viewController id="42j-Wr-x0U" sceneMemberID="viewController">
+                <viewController id="42j-Wr-x0U" customClass="ProfileViewController" customModule="Skate_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dxc-B3-kMx"/>
                         <viewControllerLayoutGuide type="bottom" id="zeQ-lA-do0"/>
@@ -113,7 +113,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="jLV-yO-a4v"/>
+                    <navigationItem key="navigationItem" title="Profile" id="jLV-yO-a4v">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="7bg-0C-vW1">
+                            <connections>
+                                <action selector="logout_TouchUpInside:" destination="42j-Wr-x0U" id="eyd-FJ-ZpF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ROi-mv-o81" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -343,6 +349,6 @@
         <image name="placeholderImage" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="81q-W9-GO8"/>
+        <segue reference="EXs-0K-k08"/>
     </inferredMetricsTieBreakers>
 </document>
