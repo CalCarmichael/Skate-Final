@@ -115,6 +115,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="jLV-yO-a4v">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="7bg-0C-vW1">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="logout_TouchUpInside:" destination="42j-Wr-x0U" id="eyd-FJ-ZpF"/>
                             </connections>
@@ -123,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ROi-mv-o81" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2070" y="938"/>
+            <point key="canvasLocation" x="1553" y="945"/>
         </scene>
         <!--Map-->
         <scene sceneID="ELH-JA-NI8">
@@ -177,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2Y-8a-euS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3014" y="938"/>
+            <point key="canvasLocation" x="2540" y="945"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VAn-Vq-Lwj">
@@ -228,7 +229,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uvE-JB-6nJ">
                                 <rect key="frame" x="0.0" y="340" width="375" height="137"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GY8-XA-gCs">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GY8-XA-gCs">
                                         <rect key="frame" x="8" y="8" width="359" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -272,16 +273,24 @@
                             <constraint firstItem="Y0e-wc-195" firstAttribute="trailing" secondItem="uvE-JB-6nJ" secondAttribute="trailing" id="uwN-M7-Fbp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Camera" id="Tuw-ti-yqt"/>
+                    <navigationItem key="navigationItem" title="Camera" id="Tuw-ti-yqt">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="izq-Ff-XLo">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="remove_TouchUpInside:" destination="4sL-eK-h64" id="lxH-dd-xjb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cameraImage" destination="r2V-OS-Zt3" id="5w2-xY-c4e"/>
                         <outlet property="captionTextView" destination="GY8-XA-gCs" id="gcB-IS-H9R"/>
+                        <outlet property="clearPostButton" destination="izq-Ff-XLo" id="Pj0-la-rVR"/>
                         <outlet property="shareButton" destination="KQ9-uj-dUb" id="fCD-Ok-Kig"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPx-QQ-weB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4588" y="-509.59520239880067"/>
+            <point key="canvasLocation" x="3542" y="945"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="1nI-vT-hyW">
@@ -409,7 +418,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nEI-a1-fbb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2070" y="248"/>
+            <point key="canvasLocation" x="1553" y="189"/>
         </scene>
         <!--Map Navigation-->
         <scene sceneID="uSD-kv-oMf">
@@ -430,7 +439,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zvc-Es-7U1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3014" y="248"/>
+            <point key="canvasLocation" x="2540" y="188"/>
         </scene>
         <!--Camera Navigation-->
         <scene sceneID="TK2-Uq-gEs">
@@ -451,7 +460,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5jG-rD-l1R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3648.8000000000002" y="-509.59520239880067"/>
+            <point key="canvasLocation" x="3542" y="188"/>
         </scene>
     </scenes>
     <resources>
