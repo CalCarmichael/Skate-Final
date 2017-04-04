@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class SignInViewController: UIViewController {
-
+    
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -19,7 +19,7 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //Editing the text fields UI
         
         emailTextField.backgroundColor = UIColor.clear
@@ -40,32 +40,35 @@ class SignInViewController: UIViewController {
         bottomLinePassword.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
         passwordTextField.layer.addSublayer(bottomLinePassword)
         
-    
-
-    handleTextField()
-    
+        //Button only works when text fields input
+        
+        signInButton.isEnabled = false
+        
+        
+        handleTextField()
+        
     }
     
-     //Log user back in if they had previously signed in on same device without logging out
+    //Log user back in if they had previously signed in on same device without logging out
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if FIRAuth.auth()?.currentUser != nil {
-
-        self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
-        
+            
+            self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
+            
         }
         
     }
     
     //When the text field changes and all are filled in the sign in button becomes white
-
+    
     func handleTextField() {
-    
-    emailTextField.addTarget(self, action: #selector(SignInViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
-    passwordTextField.addTarget(self, action: #selector(SignInViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
-    
+        
+        emailTextField.addTarget(self, action: #selector(SignInViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(SignInViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        
     }
     
     func textFieldDidChange() {
@@ -83,23 +86,21 @@ class SignInViewController: UIViewController {
         
     }
     
-    //Authorizing sign in button
+    //Authorizing sign in button (within AuthService)
     
     @IBAction func signInButton_TouchUpInside(_ sender: Any) {
-    
-        FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
-            if error != nil {
-                print(error!.localizedDescription)
-                return
-            }
+        
+        AuthService.signIn(email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
             
-            //Sending to main tabbar page
-            
+            //Sending to main tabbar page when successful sign in
             self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
             
+        }, onError: { error in
+            
+            print(error!)
+            
         })
-    
-    
+        
     }
     
     

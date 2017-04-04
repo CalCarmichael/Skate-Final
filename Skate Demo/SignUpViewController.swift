@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class SignUpViewController: UIViewController {
-
+    
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -24,7 +24,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         //Editing the text fields UI
         
@@ -66,38 +66,42 @@ class SignUpViewController: UIViewController {
         profileImage.addGestureRecognizer(tapGesture)
         profileImage.isUserInteractionEnabled = true
         
+        //Button only works when all fields have inputs
+        
+        signUpButton.isEnabled = false
+        
         //Validating  user authentication
         
         handleTextField()
-            
-        }
         
-        func handleTextField() {
-            
-            usernameTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
-            emailTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
-            passwordTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
-        }
+    }
+    
+    func handleTextField() {
         
-        func textFieldDidChange() {
-            guard let username = usernameTextField.text, !username.isEmpty, let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty
+        usernameTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        emailTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+    }
+    
+    func textFieldDidChange() {
+        guard let username = usernameTextField.text, !username.isEmpty, let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty
             else {
                 
                 signUpButton.isEnabled = false
                 return
-            }
-            
-            //When all three fields are filled in the sign up button white color is enabled
-            
-            signUpButton.setTitleColor(UIColor.white, for: UIControlState.normal)
-            signUpButton.isEnabled = true
+        }
+        
+        //When all three fields are filled in the sign up button white color is enabled
+        
+        signUpButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        signUpButton.isEnabled = true
         
     }
     
     //User profile image picker
     
     func handleSelectProfileImage() {
-     
+        
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
         present(pickerController, animated: true, completion: nil)
@@ -111,57 +115,40 @@ class SignUpViewController: UIViewController {
     }
     
     //Signing up the users and sending information to database
-
+    
     @IBAction func signUpButton_TouchUpInside(_ sender: Any) {
-    
-        FIRAuth.auth()?.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user: FIRUser?, error) in
-            
-            if error != nil {
-                print(error!.localizedDescription)
-                return
-            }
-            
-            let uid = user?.uid
-            let storageRef = FIRStorage.storage().reference(forURL: "gs://skate-286c4.appspot.com").child("profile_image").child(uid!)
-            if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
-                storageRef.put(imageData, metadata: nil, completion: { (metadata, error) in
-                    
-                    if error != nil {
-                        return
-                        
-                    }
-                    
-                    let profileImageUrl = metadata?.downloadURL()?.absoluteString
-                    
-                    self.setUserInformation(profileImageUrl: profileImageUrl!, username: self.usernameTextField.text!, email: self.emailTextField.text!, uid: uid!)
-                    
-                })
-            }
-            
-        })
         
+        if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
+            
+            AuthService.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, imageData: imageData, onSuccess: {
+                
+                self.performSegue(withIdentifier: "signUpToTabbarVC", sender: nil)
+                
+            }, onError: { (errorString) in
+                
+                print(errorString!)
+                
+            })
+            
+        } else {
+            
+            print("Profile Image must be chosen")
+            
         }
-    
-        func setUserInformation(profileImageUrl: String, username: String, email: String, uid: String) {
-            let ref = FIRDatabase.database().reference()
-            let userReference = ref.child("users")
-            let newUserReference = userReference.child(uid)
-            newUserReference.setValue(["username": username, "email": email, "profileImageUrl": profileImageUrl])
-            self.performSegue(withIdentifier: "signUpToTabbarVC", sender: nil)
-
-            
-    }
         
-}
+        
+    }
     
+}
+
 
 
 //Extension for showing user image in view
-    
+
 extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-       
+        
         print("did finish pick")
         
         if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage {
