@@ -10,18 +10,24 @@ import UIKit
 import Firebase
 import Mapbox
 
-
-
 class ViewController: UIViewController, SideBarDelegate, MGLMapViewDelegate {
     
     
     @IBOutlet weak var mapView: MGLMapView!
+
+    var sideBar: SideBar = SideBar()
+    
+    var skateparks = [Skatepark]()
+    
+    var locationManager = CLLocationManager()
+    
+    let locationsRef = FIRDatabase.database().reference(withPath: "locations")
     
     
     //Filtering annotations for sidebar
     
     func sideBarDidSelectButtonAtIndex(_ index: Int) {
-       mapView.removeAnnotations(mapView.annotations!)
+        mapView.removeAnnotations(mapView.annotations!)
         
         for park in skateparks {
             
@@ -37,7 +43,7 @@ class ViewController: UIViewController, SideBarDelegate, MGLMapViewDelegate {
                 addAnnotation(park: park)
             }
             
-            //Change this to feature the users own personal spots they saved to firebase
+            //Change this features to savedLocations
             
             if index == 3 {
                 addAnnotation(park: park)
@@ -47,12 +53,7 @@ class ViewController: UIViewController, SideBarDelegate, MGLMapViewDelegate {
         }
         
     }
-
-    var sideBar: SideBar = SideBar()
     
-    var skateparks = [Skatepark]()
-    
-    let locationsRef = FIRDatabase.database().reference(withPath: "locations")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,6 +112,24 @@ class ViewController: UIViewController, SideBarDelegate, MGLMapViewDelegate {
     }
     
     
+    //User can save their location
+    
+    @IBAction func findUserLocationAndDropPin(_ sender: Any) {
+    
+        let userLocationCoordinates = CLLocationCoordinate2DMake((locationManager.location?.coordinate.latitude)!, (locationManager.location?.coordinate.longitude)!)
+        let pinForUserLocation = MGLPointAnnotation()
+        pinForUserLocation.coordinate = userLocationCoordinates
+        pinForUserLocation.title = ""
+        pinForUserLocation.subtitle = ""
+        mapView.addAnnotation(pinForUserLocation)
+        mapView.showAnnotations([pinForUserLocation], animated: true)
+        
+        //When the user clicks the button, send the CLLocation Coordinate 2D make to firebase against their user ID
+        
+        let locationsRef = FIRDatabase.database().reference(withPath: "users/MknkigPqoqN7zb2WAF5aAltEshi2/locations")
+        locationsRef.setValue(["lat": 000, "lng": 000]) //need to add so it doesnt overwrite (add a child?), change the locations so they are actually right
+
+    }
 
     //Show the annotation callout
 

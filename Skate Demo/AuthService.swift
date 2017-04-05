@@ -68,7 +68,6 @@ class AuthService {
         newUserReference.setValue(["username": username, "email": email, "profileImageUrl": profileImageUrl])
         onSuccess()
         
-        
     }
     
 }

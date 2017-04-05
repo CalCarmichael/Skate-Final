@@ -150,9 +150,9 @@
 				9F47636D1E93C00200D74370 /* Config.swift */,
 				9F63C05B1E8BB8A500E4E39B /* Login */,
 				9F8D373A1E829BCE003E36CB /* Map */,
-				9F8D37391E8295DD003E36CB /* Side Bar Menu */,
 				9F47636A1E93AE2200D74370 /* Profile */,
 				9F4763751E93F42A00D74370 /* Camera */,
+				9F8D37391E8295DD003E36CB /* Side Bar Menu */,
 				9FE94C1B1E796B75009B7B3F /* Main.storyboard */,
 				9FE94C1E1E796B75009B7B3F /* Assets.xcassets */,
 				9FE94C201E796B75009B7B3F /* LaunchScreen.storyboard */,
@@ -197,6 +197,7 @@
 				TargetAttributes = {
 					9FE94C131E796B75009B7B3F = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = PB5S47GH58;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -426,6 +427,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = PB5S47GH58;
 				INFOPLIST_FILE = "Skate Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cal.Skate-Demo";
@@ -442,6 +444,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = PB5S47GH58;
 				INFOPLIST_FILE = "Skate Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cal.Skate-Demo";

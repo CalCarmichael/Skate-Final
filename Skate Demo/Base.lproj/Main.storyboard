@@ -78,13 +78,11 @@
                             <constraint firstItem="VjC-ZS-f9Z" firstAttribute="trailing" secondItem="PEJ-UM-sHW" secondAttribute="trailingMargin" id="1Ce-0B-7Nq"/>
                             <constraint firstItem="VjC-ZS-f9Z" firstAttribute="leading" secondItem="PEJ-UM-sHW" secondAttribute="leadingMargin" id="4h9-je-43P"/>
                             <constraint firstItem="Rqu-ho-B5H" firstAttribute="centerX" secondItem="PEJ-UM-sHW" secondAttribute="centerX" id="BDd-gp-tvj"/>
-                            <constraint firstItem="rGW-cO-Zez" firstAttribute="centerX" secondItem="PEJ-UM-sHW" secondAttribute="centerX" id="FA4-Hj-fRT"/>
-                            <constraint firstItem="rGW-cO-Zez" firstAttribute="leading" secondItem="PEJ-UM-sHW" secondAttribute="leadingMargin" id="FyC-Ld-aDl"/>
+                            <constraint firstItem="rGW-cO-Zez" firstAttribute="trailing" secondItem="VjC-ZS-f9Z" secondAttribute="trailing" id="EjQ-VS-Hl7"/>
                             <constraint firstItem="Rqu-ho-B5H" firstAttribute="leading" secondItem="PEJ-UM-sHW" secondAttribute="leading" constant="20" id="J9p-sQ-yAI"/>
-                            <constraint firstItem="rGW-cO-Zez" firstAttribute="trailing" secondItem="PEJ-UM-sHW" secondAttribute="trailingMargin" id="Jxe-it-xWH"/>
-                            <constraint firstItem="rGW-cO-Zez" firstAttribute="centerX" secondItem="PEJ-UM-sHW" secondAttribute="centerX" id="P8l-Ee-Wsu"/>
+                            <constraint firstItem="rGW-cO-Zez" firstAttribute="top" secondItem="zy9-Vr-X9I" secondAttribute="bottom" constant="81" id="U2x-cF-P6p"/>
                             <constraint firstItem="Rqu-ho-B5H" firstAttribute="centerY" secondItem="PEJ-UM-sHW" secondAttribute="centerY" id="ZbS-zy-1Ir"/>
-                            <constraint firstItem="rGW-cO-Zez" firstAttribute="top" secondItem="zy9-Vr-X9I" secondAttribute="bottom" constant="81" id="p3J-m6-cSE"/>
+                            <constraint firstItem="rGW-cO-Zez" firstAttribute="leading" secondItem="VjC-ZS-f9Z" secondAttribute="leading" id="aPm-3c-pI2"/>
                             <constraint firstItem="kxa-BO-uf7" firstAttribute="top" secondItem="VjC-ZS-f9Z" secondAttribute="bottom" constant="8" id="vPp-pi-SM9"/>
                             <constraint firstAttribute="trailing" secondItem="Rqu-ho-B5H" secondAttribute="trailing" constant="20" id="yid-fD-HL9"/>
                         </constraints>
@@ -114,17 +112,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="jLV-yO-a4v">
-                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="7bg-0C-vW1">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="logout_TouchUpInside:" destination="42j-Wr-x0U" id="eyd-FJ-ZpF"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="a5V-wu-ZMH">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Upv-8S-ClW">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout_TouchUpInside:" destination="42j-Wr-x0U" eventType="touchUpInside" id="vCr-dk-GaG"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ROi-mv-o81" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1553" y="945"/>
+            <point key="canvasLocation" x="2070" y="938"/>
         </scene>
         <!--Map-->
         <scene sceneID="ELH-JA-NI8">
@@ -171,14 +175,27 @@
                             <constraint firstItem="vvy-cF-Es7" firstAttribute="leading" secondItem="qlp-kZ-dLM" secondAttribute="leading" id="rbp-Jh-o8Q"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Map" id="FJ5-RQ-Wis"/>
+                    <navigationItem key="navigationItem" title="Map" id="FJ5-RQ-Wis">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="neu-YN-Etb">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PpG-CM-lmv">
+                                <rect key="frame" x="263" y="7" width="96" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save Location">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="findUserLocationAndDropPin:" destination="e0I-DB-JwP" eventType="touchUpInside" id="bcC-a2-xPX"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="vvy-cF-Es7" id="Q0o-2M-4V5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2Y-8a-euS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2540" y="945"/>
+            <point key="canvasLocation" x="3014" y="938"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VAn-Vq-Lwj">
@@ -229,7 +246,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uvE-JB-6nJ">
                                 <rect key="frame" x="0.0" y="340" width="375" height="137"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GY8-XA-gCs">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GY8-XA-gCs">
                                         <rect key="frame" x="8" y="8" width="359" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -273,24 +290,16 @@
                             <constraint firstItem="Y0e-wc-195" firstAttribute="trailing" secondItem="uvE-JB-6nJ" secondAttribute="trailing" id="uwN-M7-Fbp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Camera" id="Tuw-ti-yqt">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="izq-Ff-XLo">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="remove_TouchUpInside:" destination="4sL-eK-h64" id="lxH-dd-xjb"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Camera" id="Tuw-ti-yqt"/>
                     <connections>
                         <outlet property="cameraImage" destination="r2V-OS-Zt3" id="5w2-xY-c4e"/>
                         <outlet property="captionTextView" destination="GY8-XA-gCs" id="gcB-IS-H9R"/>
-                        <outlet property="clearPostButton" destination="izq-Ff-XLo" id="Pj0-la-rVR"/>
                         <outlet property="shareButton" destination="KQ9-uj-dUb" id="fCD-Ok-Kig"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPx-QQ-weB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3542" y="945"/>
+            <point key="canvasLocation" x="4588" y="-509.59520239880067"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="1nI-vT-hyW">
@@ -418,7 +427,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nEI-a1-fbb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1553" y="189"/>
+            <point key="canvasLocation" x="2070" y="248"/>
         </scene>
         <!--Map Navigation-->
         <scene sceneID="uSD-kv-oMf">
@@ -439,7 +448,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zvc-Es-7U1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2540" y="188"/>
+            <point key="canvasLocation" x="3014" y="248"/>
         </scene>
         <!--Camera Navigation-->
         <scene sceneID="TK2-Uq-gEs">
@@ -460,7 +469,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5jG-rD-l1R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3542" y="188"/>
+            <point key="canvasLocation" x="3648.8000000000002" y="-509.59520239880067"/>
         </scene>
     </scenes>
     <resources>
