@@ -13,5 +13,6 @@ target 'Skate Demo' do
     pod 'FBSDKLoginKit'
     pod 'SidebarOverlay'
     pod 'Mapbox-iOS-SDK', '~> 3.5'
+    pod 'ProgressHUD'
 
 end
