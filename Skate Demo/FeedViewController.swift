@@ -2,7 +2,7 @@
 //  FeedViewController.swift
 //  Skate Demo
 //
-//  Created by Callum Carmichael (i7726422) on 31/03/2017.
+//  Created by Callum Carmichael (i7726422) on 06/04/2017.
 //  Copyright © 2017 Callum Carmichael (i7726422). All rights reserved.
 //
 
@@ -10,76 +10,71 @@ import UIKit
 import Firebase
 
 class FeedViewController: UIViewController {
-    
-    var databaseReference: FIRDatabaseReference!
 
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var posts = [Post]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    databaseReference = FIRDatabase.database().reference()
+        tableView.dataSource = self
+        loadPosts()
         
-        if let currentUserID = FIRAuth.auth()?.currentUser?.uid {
-            print(currentUserID)
-            
-            getUsersImFollowing()
-            
-        } else {
-            
-            print("Not Logged In")
-        }
+//        var post = Post(captionText: "test", photoUrlString: "url1")
+//        print(post.caption)
+//        print(post.photoUrl)
         
-        
-    }
-
-    func getUsersImFollowing() {
-        
-        let userID = "Me" //substitute of currentuserID
-        let followReference = databaseReference.child("Follow").child(userID).child("Following")
-        followReference.observeSingleEvent(of: .value, with: { (FollowingSnapshot) in
-            let FollowingDictionary = FollowingSnapshot.value as? NSDictionary
-            print(FollowingDictionary?.count ?? 0)
-            self.getUsersImFollowingInformation(dict: FollowingDictionary as! [String: String])
-            
-        }) { (error) in
-            print(error)
-        }
         
     }
     
-    func getUsersImFollowingInformation(dict: [String:String]) {
+    //Retrieving the posts from the database with child added - updates only what we want not everything
+    
+    func loadPosts() {
         
-        //Loop through dictionary
-        
-        for(userID, userName) in dict {
-        
-            let profileReference = databaseReference.child("User").child(userID)
-            profileReference.observeSingleEvent(of: .value, with: { (ProfileSnapshot) in
-                let userDictionary = ProfileSnapshot.value as? NSDictionary
-                let profilePictureUrl = userDictionary?["profile_photo"] as? String ?? "unknown user"
-                
-                let photosReference = self.databaseReference.child("Photo").child(userID)
-                
-                photosReference.observe(.value, with: { (photoPostSnapshot) in
-                    let photoPostsDictionary = photoPostSnapshot.value as? NSDictionary
-                    for(id, post) in photoPostsDictionary! {
-                        print(userName)
-                        print(profilePictureUrl)
-                        print(id, post)
-                        
-                    }
-                    
-                }, withCancel: { (error) in
-                    print(error)
-                    
-                })
-                
-                
-            }, withCancel: { (error) in
-                print(error)
-            })
+        FIRDatabase.database().reference().child("posts").observe(.childAdded) { (snapshot: FIRDataSnapshot) in
             
+            if let dict = snapshot.value as? [String: Any] {
+                
+                //Retrieving from the database - post Model created class
+                
+                let captionText = dict["caption"] as! String
+                
+                let photoUrlString = dict["photoUrl"] as! String
+                
+                let post = Post(captionText: captionText, photoUrlString: photoUrlString)
+                
+                self.posts.append(post)
+                print(self.posts)
+                self.tableView.reloadData()
+                
+            }
+            
+        }
+        
     }
 
 }
 
+extension FeedViewController: UITableViewDataSource {
+    
+    //Rows in table view - returning posts
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return posts.count
+    }
+    
+    //Customise rows
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        //Reuses the cells shown rather than uploading all of them at once
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
+        cell.textLabel?.text = posts[indexPath.row].caption
+        return cell
+    }
+    
 }

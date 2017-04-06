@@ -35,10 +35,10 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This will help send skate locations!</string>
+	<string>Accept to recieve skate locations!</string>
 	<key>MGLMapboxAccessToken</key>
 	<string>pk.eyJ1IjoiY2FsbHVtY2FybWljaGFlbCIsImEiOiJjajBwZGY5NTYwMDBqMnFxcXU0Z213bXVtIn0.1wsZPZy2CH8_2Drt-D4tVg</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Please upload a photo!</string>
+	<string>Please upload your user photo!</string>
 </dict>
 </plist>

@@ -17,16 +17,15 @@ class ProfileViewController: UIViewController {
         
     }
 
+   
     @IBAction func logout_TouchUpInside(_ sender: Any) {
-    
         do {
-            
-            try FIRAuth.auth()?.signOut()
-            
+   
+    try FIRAuth.auth()?.signOut()
+    
         } catch let logoutError {
             print(logoutError)
         }
-
         
         //When logging out send back to the sign in view controller
         
